@@ -1,0 +1,2 @@
+defmodule Hogan do
+end
