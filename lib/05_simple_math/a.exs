@@ -1,7 +1,7 @@
-defmodule SimpleMath do
+defmodule SimpleMath.A do
   def num(:one), do: IO.gets("What is the first number? ") |> String.strip |> Float.parse
   def num(:two), do: IO.gets("What is the second number? ") |> String.strip |> Float.parse
-  
+
   def go do
     {one, _} = num(:one)
     {two, _} = num(:two)
@@ -18,4 +18,4 @@ defmodule SimpleMath do
   def math("*", one, two), do: one * two
   def math("/", one, two), do: one / two
 end
-SimpleMath.go
+SimpleMath.A.go
