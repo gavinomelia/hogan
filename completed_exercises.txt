@@ -6,6 +6,13 @@ a.exs
 b.exs
 03_printing_quotes
 a.exs
-04_simple_math
+04_mad_lib
+a.exs
+b.exs
+c.exs
+05_simple_math
+a.exs
+b.exs
+06_retirement_calculator
 a.exs
 b.exs
