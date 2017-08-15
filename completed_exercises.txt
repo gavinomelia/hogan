@@ -16,3 +16,7 @@ b.exs
 06_retirement_calculator
 a.exs
 b.exs
+07_area_of_room
+a.exs
+b.exs
+c.exs
