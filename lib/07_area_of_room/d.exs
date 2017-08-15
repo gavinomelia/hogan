@@ -1,5 +1,6 @@
-defmodule AreaOfRoom.B do
-  @meter_feet_conversion 0.09290304
+defmodule AreaOfRoom.D do
+  @feet_meter_conversion 0.09290304
+  @meter_feet_conversion 3.28084
   def get(:length), do: IO.gets("What is the length of the room? ") |> String.strip |> Float.parse |> filter(:length)
   def get(:width), do: IO.gets("What is the width of the room? ") |> String.strip |> Float.parse |> filter(:width)
 
@@ -17,23 +18,23 @@ defmodule AreaOfRoom.B do
   end
 
   def calculate("feet", length, width) do
-    area = (length * width) |> Float.round(2)
-    area_meters = (area * @meter_feet_conversion) |> Float.round(2)
-    output(length, width, area_meters)
+    area_feet = (length * width)
+    area_meters = (area_feet * @feet_meter_conversion) |> Float.round(2)
+    output(length, width, area_meters, area_feet)
   end
-
   def calculate("meters", length, width) do
-    area = (length * width) |> Float.round(2)
-    output(length, width, area)
+    area_meters = (length * width)
+    area_feet = (area_meters * @meter_feet_conversion)
+    output(length, width, area_meters, area_feet)
   end
 
-  def output(length, width, area) do
+  def output(length, width, area_meters, area_feet) do
     IO.puts """
     You enter dimensions of #{length} feet by #{width} feet.
     The area is:
-    #{area} square feet
+    #{area_feet} square feet
     #{area_meters} square meters
     """
   end
 end
-AreaOfRoom.B.go
+AreaOfRoom.D.go
