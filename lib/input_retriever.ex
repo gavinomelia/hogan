@@ -22,7 +22,24 @@ defmodule InputRetriever do
             end
           end
 
-          def retrieve_string(prompt) do
-            IO.gets(prompt) |> String.strip |> String.downcase
-          end
-    end
+          def repeat_retrieve(prompt) do
+            number = IO.gets(prompt) |> String.strip
+            if number == "done" do
+              :done
+            else
+              case number |> Float.parse  do
+                :error ->
+                  IO.puts "Please enter a valid amount."
+                  retrieve(prompt)
+                  { amount, _ } when amount < 0 ->
+                    IO.puts "No negatives allowed."
+                    retrieve(prompt)
+                    { amount, _ } -> amount
+                  end
+                end
+              end
+
+              def retrieve_string(prompt) do
+                IO.gets(prompt) |> String.strip |> String.downcase
+              end
+            end
