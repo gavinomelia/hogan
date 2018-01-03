@@ -20,9 +20,11 @@ defmodule PaintCalculator.B do
   end
 
   def calculate("l-shaped") do
-    length = retrieve("What is the length of the room? ")
-    width = retrieve("What is the width of the room? ")
-    area = length * width
+    length1 = retrieve("What is the length of the first section? ")
+    width1 = retrieve("What is the width of the first section? ")
+    length2 = retrieve("What is the length of the second section? ")
+    width2 = retrieve("What is the width of the second section? ")
+    area = (length1 * width1) + (length2 * width2)
     output(area)
   end
 
