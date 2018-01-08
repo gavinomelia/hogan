@@ -4,7 +4,7 @@ defmodule Hogan.Mixfile do
   def project do
     [app: :hogan,
      version: "0.1.0",
-     elixir: "~> 1.3",
+     elixir: "~> 1.5.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -27,6 +27,6 @@ defmodule Hogan.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:httpoison, "~> 0.13"}, {:poison, "~> 3.1"}]
   end
 end

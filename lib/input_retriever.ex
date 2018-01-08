@@ -1,6 +1,6 @@
 defmodule InputRetriever do
   def retrieve(prompt) do
-    number = IO.gets(prompt) |> String.strip
+    number = IO.gets(prompt) |> String.trim
     case number |> Float.parse  do
       :error ->
         IO.puts "Please enter a valid amount."
@@ -12,7 +12,7 @@ defmodule InputRetriever do
         end
       end
       def retrieve_string(prompt, list) do
-        the_string = IO.gets(prompt) |> String.strip |> String.downcase
+        the_string = IO.gets(prompt) |> String.trim |> String.downcase
         case Enum.member?(list, the_string) do
           false ->
             IO.puts "Please enter a valid string."
@@ -23,7 +23,7 @@ defmodule InputRetriever do
           end
 
           def repeat_retrieve(prompt) do
-            number = IO.gets(prompt) |> String.strip
+            number = IO.gets(prompt) |> String.trim
             if number == "done" do
               :done
             else
@@ -40,6 +40,6 @@ defmodule InputRetriever do
               end
 
               def retrieve_string(prompt) do
-                IO.gets(prompt) |> String.strip |> String.downcase
+                IO.gets(prompt) |> String.trim |> String.downcase
               end
             end
