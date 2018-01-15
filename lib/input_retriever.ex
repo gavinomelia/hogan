@@ -42,4 +42,7 @@ defmodule InputRetriever do
               def retrieve_string(prompt) do
                 IO.gets(prompt) |> String.trim |> String.downcase
               end
+              def retrieve_string_case(prompt) do
+                IO.gets(prompt) |> String.trim
+              end
             end
